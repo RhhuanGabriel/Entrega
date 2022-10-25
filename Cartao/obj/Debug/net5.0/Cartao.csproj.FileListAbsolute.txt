@@ -1,0 +1,16 @@
+C:\Users\android\source\repos\Cartao\Cartao\bin\Debug\net5.0\Cartao.exe
+C:\Users\android\source\repos\Cartao\Cartao\bin\Debug\net5.0\Cartao.deps.json
+C:\Users\android\source\repos\Cartao\Cartao\bin\Debug\net5.0\Cartao.runtimeconfig.json
+C:\Users\android\source\repos\Cartao\Cartao\bin\Debug\net5.0\Cartao.runtimeconfig.dev.json
+C:\Users\android\source\repos\Cartao\Cartao\bin\Debug\net5.0\Cartao.dll
+C:\Users\android\source\repos\Cartao\Cartao\bin\Debug\net5.0\Cartao.pdb
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\Cartao.csproj.AssemblyReference.cache
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\Cartao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\Cartao.AssemblyInfoInputs.cache
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\Cartao.AssemblyInfo.cs
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\Cartao.csproj.CoreCompileInputs.cache
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\Cartao.dll
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\refint\Cartao.dll
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\Cartao.pdb
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\Cartao.genruntimeconfig.cache
+C:\Users\android\source\repos\Cartao\Cartao\obj\Debug\net5.0\ref\Cartao.dll
