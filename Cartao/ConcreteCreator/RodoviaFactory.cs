@@ -7,9 +7,9 @@ namespace Entrega.ConcreteCreator
     public class RodoviaFactory : EntregaFactory
     {
         private int _prazo;
-        private int _valor;
+        private double _valor;
 
-        public RodoviaFactory(int prazo, int valor)
+        public RodoviaFactory(int prazo, double valor)
         {
             _prazo = prazo;
             _valor = valor;

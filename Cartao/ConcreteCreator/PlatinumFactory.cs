@@ -6,10 +6,10 @@ namespace Entrega.ConcreteCreator
 {
     public class PlatinumFactory : CartaoFactory
     {
-        private float _limite;
-        private float _cobrancaAnual;
+        private double _limite;
+        private double _cobrancaAnual;
 
-        public PlatinumFactory(float limite, float cobrancaAnual)
+        public PlatinumFactory(double limite, double cobrancaAnual)
         {
             this._limite = limite;
             this._cobrancaAnual = cobrancaAnual;

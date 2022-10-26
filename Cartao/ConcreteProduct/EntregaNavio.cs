@@ -6,9 +6,9 @@ namespace Entrega.ConcreteProduct
     {
         private readonly string _tipo;
         private int _prazo;
-        private int _valor;
+        private double _valor;
 
-        public EntregaNavio(int prazo, int valor)
+        public EntregaNavio(int prazo, double valor)
         {
             this._tipo = "Marítimo";
             this._prazo = prazo;
@@ -26,7 +26,7 @@ namespace Entrega.ConcreteProduct
             set { _prazo = value; }
         }
 
-        public override int Valor
+        public override double Valor
         {
             get { return _valor; }
             set { _valor = value; }

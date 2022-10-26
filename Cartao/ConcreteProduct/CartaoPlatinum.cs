@@ -5,10 +5,10 @@ namespace Entrega.ConcreteProduct
     public class CartaoPlatinum : CartaoCredito
     {
         private readonly string _tipo;
-        private float _limite;
-        private float _cobrancaAnual;
+        private double _limite;
+        private double _cobrancaAnual;
 
-        public CartaoPlatinum(float limite, float cobrancaAnual)
+        public CartaoPlatinum(double limite, double cobrancaAnual)
         {
             this._tipo = "Platinum";
             this._limite = limite;
@@ -20,13 +20,13 @@ namespace Entrega.ConcreteProduct
             get { return _tipo; }
         }
 
-        public override float Limite
+        public override double Limite
         {
             get { return _limite; }
             set { _limite = value; }
         }
 
-        public override float CobrancaAnual
+        public override double CobrancaAnual
         {
             get { return _cobrancaAnual; }
             set { _cobrancaAnual = value; }

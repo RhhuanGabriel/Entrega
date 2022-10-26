@@ -11,47 +11,67 @@ namespace Entrega
         {
             CartaoFactory cartaoFactory = null;
 
-            Console.WriteLine("Qual cartão deseja solicitar? (1 - Black|2 - Platinum|3 - Titanium): ");
+            Console.Write("Qual cartão deseja solicitar? (1 - Black|2 - Platinum|3 - Titanium): ");
             int escolha = Convert.ToInt32(Console.ReadLine());
+
+            // Limite dos cartões
+            double limiteBlack = 50000;
+            double limitePlatinum = 100000;
+            double limiteTitanium = 500000;
+
+            // Cobrança anual
+            double cobrancaBlack = 0;
+            double cobrancaPlatinum = 52.95;
+            double cobrancaTitanium = 1010.36;
 
             switch (escolha)
             {
                 case 1:
-                    cartaoFactory = new BlackFactory(50000, 0);
+                    cartaoFactory = new BlackFactory(limiteBlack, cobrancaBlack);
                     break;
                 case 2:
-                    cartaoFactory = new PlatinumFactory(100000, 50);
+                    cartaoFactory = new PlatinumFactory(limitePlatinum, cobrancaPlatinum);
                     break;
                 case 3:
-                    cartaoFactory = new TitaniumFactory(500000, 1000);
+                    cartaoFactory = new TitaniumFactory(limiteTitanium, cobrancaTitanium);
                     break;
                 default:
                     break;
             }
 
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("-----------------------------------------------------------------------");
 
             EntregaFactory entregaFactory = null;
 
-            Console.WriteLine("Qual será o tipo de entrega? (1 - Marítimo|2 - Aéreo|3 - Rodoviário): ");
+            Console.Write("Qual será o tipo de entrega? (1 - Marítimo|2 - Aéreo|3 - Rodoviário): ");
             escolha = Convert.ToInt32(Console.ReadLine());
+
+            // Prazo de entrega
+            int prazoNavio = 10;
+            int prazoAviao = 4;
+            int prazoRodovia = 15;
+
+            // Valor do frete
+            double freteNavio = 98.38;
+            double freteAviao = 199.99;
+            double freteRodovia = 29.56;
 
             switch (escolha)
             {
                 case 1:
-                    entregaFactory = new NavioFactory(10, 100);
+                    entregaFactory = new NavioFactory(prazoNavio, freteNavio);
                     break;
                 case 2:
-                    entregaFactory = new AviaoFactory(4, 200);
+                    entregaFactory = new AviaoFactory(prazoAviao, freteAviao);
                     break;
                 case 3:
-                    entregaFactory = new RodoviaFactory(15, 30);
+                    entregaFactory = new RodoviaFactory(prazoRodovia, freteRodovia);
                     break;
                 default:
                     break;
             }
 
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("-----------------------------------------------------------------------");
 
             EntregaProduct entregaProduct = entregaFactory.BuscarEntrega();
             CartaoCredito cartaoCredito = cartaoFactory.BuscarCartao();
@@ -63,7 +83,7 @@ namespace Entrega
             Console.WriteLine("Cobrança anual: R$" + cartaoCredito.CobrancaAnual);
             Console.WriteLine("Via: " + entregaProduct.TipoEntrega);
             Console.WriteLine("Prazo: " + entregaProduct.Prazo + " dias");
-            Console.WriteLine("Valor: R$" + entregaProduct.Valor);
+            Console.WriteLine("Frete: R$" + entregaProduct.Valor);
             Console.ReadKey();
         }
     }
