@@ -7,12 +7,14 @@ namespace Entrega.ConcreteProduct
         private readonly string _tipo;
         private int _prazo;
         private double _valor;
+        private string _nome;
 
-        public EntregaRodovia(int prazo, double valor)
+        public EntregaRodovia(int prazo, double valor, string nome)
         {
             this._tipo = "Rodoviário";
             this._prazo = prazo;
             this._valor = valor;
+            this._nome = nome;
         }
 
         public override string TipoEntrega
@@ -30,6 +32,12 @@ namespace Entrega.ConcreteProduct
         {
             get { return _valor; }
             set { _valor = value; }
+        }
+
+        public override string nomeDestinatario
+        {
+            get { return _nome; }
+            set { _nome = value; }
         }
     }
 }

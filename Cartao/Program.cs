@@ -9,42 +9,7 @@ namespace Entrega
     {
         static void Main(string[] args)
         {
-            CartaoFactory cartaoFactory = null;
-
-            Console.Write("Qual cartão deseja solicitar? (1 - Black|2 - Platinum|3 - Titanium): ");
-            int escolha = Convert.ToInt32(Console.ReadLine());
-
-            // Limite dos cartões
-            double limiteBlack = 50000;
-            double limitePlatinum = 100000;
-            double limiteTitanium = 500000;
-
-            // Cobrança anual
-            double cobrancaBlack = 0;
-            double cobrancaPlatinum = 52.95;
-            double cobrancaTitanium = 1010.36;
-
-            switch (escolha)
-            {
-                case 1:
-                    cartaoFactory = new BlackFactory(limiteBlack, cobrancaBlack);
-                    break;
-                case 2:
-                    cartaoFactory = new PlatinumFactory(limitePlatinum, cobrancaPlatinum);
-                    break;
-                case 3:
-                    cartaoFactory = new TitaniumFactory(limiteTitanium, cobrancaTitanium);
-                    break;
-                default:
-                    break;
-            }
-
-            Console.WriteLine("-----------------------------------------------------------------------");
-
             EntregaFactory entregaFactory = null;
-
-            Console.Write("Qual será o tipo de entrega? (1 - Marítimo|2 - Aéreo|3 - Rodoviário): ");
-            escolha = Convert.ToInt32(Console.ReadLine());
 
             // Prazo de entrega
             int prazoNavio = 10;
@@ -52,20 +17,26 @@ namespace Entrega
             int prazoRodovia = 15;
 
             // Valor do frete
-            double freteNavio = 98.38;
-            double freteAviao = 199.99;
-            double freteRodovia = 29.56;
+            double valorFreteNavio = 98.38;
+            double valorFreteAviao = 199.99;
+            double valorFreteRodovia = 29.56;
+
+            Console.Write("Qual será o tipo de entrega? (1 - Marítimo|2 - Aéreo|3 - Rodoviário): ");
+            int escolha = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Digite seu nome: ");
+            string nome = Console.ReadLine();
 
             switch (escolha)
             {
                 case 1:
-                    entregaFactory = new NavioFactory(prazoNavio, freteNavio);
+                    entregaFactory = new NavioFactory(prazoNavio, valorFreteNavio, nome);
                     break;
                 case 2:
-                    entregaFactory = new AviaoFactory(prazoAviao, freteAviao);
+                    entregaFactory = new AviaoFactory(prazoAviao, valorFreteAviao, nome);
                     break;
                 case 3:
-                    entregaFactory = new RodoviaFactory(prazoRodovia, freteRodovia);
+                    entregaFactory = new RodoviaFactory(prazoRodovia, valorFreteRodovia, nome);
                     break;
                 default:
                     break;
@@ -74,13 +45,8 @@ namespace Entrega
             Console.WriteLine("-----------------------------------------------------------------------");
 
             EntregaProduct entregaProduct = entregaFactory.BuscarEntrega();
-            CartaoCredito cartaoCredito = cartaoFactory.BuscarCartao();
 
-            Console.WriteLine("Seu cartão novo será entregue com as seguintes informações: ");
-
-            Console.WriteLine("Tipo: " + cartaoCredito.Tipo);
-            Console.WriteLine("Limite: R$" + cartaoCredito.Limite);
-            Console.WriteLine("Cobrança anual: R$" + cartaoCredito.CobrancaAnual);
+            Console.WriteLine("Nome do destinatário: " + entregaProduct.nomeDestinatario);
             Console.WriteLine("Via: " + entregaProduct.TipoEntrega);
             Console.WriteLine("Prazo: " + entregaProduct.Prazo + " dias");
             Console.WriteLine("Frete: R$" + entregaProduct.Valor);

@@ -5,5 +5,6 @@
         public abstract string TipoEntrega { get; }
         public abstract int Prazo { get; set; }
         public abstract double Valor { get; set; }
+        public abstract string nomeDestinatario { get; set; }
     }
 }
